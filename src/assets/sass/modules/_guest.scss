@@ -1,0 +1,17 @@
+@use "./guest/hero";
+@use "./guest/loginOptions";
+@use "./guest/info";
+@use "./guest/testimonials";
+
+.guestScreen {
+  padding: 0;
+}
+
+.info,
+.testimonialContainer {
+  margin: 3rem 0;
+}
+
+.testimonialContainer {
+  margin-top: 10vh;
+}

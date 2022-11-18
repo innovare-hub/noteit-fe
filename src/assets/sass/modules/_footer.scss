@@ -1,0 +1,15 @@
+@use "../utils/customProperties";
+
+footer {
+  bottom: -7vh;
+  z-index: 5;
+  width: 100vw;
+  padding: 1rem;
+  background-color: var(--black);
+  color: #eee;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}

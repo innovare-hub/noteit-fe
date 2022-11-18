@@ -1,0 +1,151 @@
+@use "utils/media";
+@use "utils/customProperties";
+
+:root {
+  font-size: 0.9375rem;
+
+  @include media.widerThan768 {
+    font-size: 1rem;
+  }
+  scroll-behavior: smooth;
+}
+
+#app {
+  margin: auto;
+  padding: 10vh 0 0 0;
+  overflow-x: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: all;
+  }
+
+  &--login {
+    position: fixed;
+    background: var(--background-gradient-alpha);
+  }
+
+  &--units {
+    z-index: 11;
+  }
+
+  &--search {
+    position: fixed;
+    z-index: 11;
+    background: unset;
+    height: 100%;
+  }
+
+  &--profile {
+    position: fixed;
+    height: 100%;
+    overflow-y: scroll;
+    background: var(--white);
+  }
+
+  &--wide {
+    position: absolute;
+    z-index: 11;
+    background: unset;
+    right: 0;
+    width: 500px;
+  }
+}
+
+.flashMessage {
+  position: fixed;
+  bottom: 2rem;
+  left: 1rem;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+  padding: 1rem 1.25rem;
+  border-left: 8px solid var(--brand-300);
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem 2rem -1rem rgba(0, 0, 0, 0.4);
+  transform: translateY(15vh);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &--active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &--success {
+    border-color: #09c85d;
+  }
+
+  &--warning {
+    border-color: var(--accent-400);
+  }
+
+  &--error {
+    border-color: #c80909;
+  }
+}
+
+body {
+  background: var(--white);
+  --bodyFont: "roboto";
+  --headingFont: "Noto Sans JP";
+  --primaryTextColor: var(--black);
+}
+
+p,
+q {
+  line-height: calc(1.5em + 0.2vw); // ref. smashing magazine
+  margin: calc(1em + 0.5vw) 0;
+}
+
+button {
+  &::after {
+    visibility: hidden;
+  }
+}
+
+.font-3x {
+  font-size: 3rem;
+}
+
+.brandText {
+  color: var(--brand-400);
+}
+
+select {
+  -webkit-appearance: initial;
+}
+
+//modifier
+
+.loginOptions--active {
+  transform: translateY(0);
+}
+
+//triggers
+
+.close {
+  position: absolute;
+  top: var(--space-400-rem);
+  right: var(--space-400-rem);
+  background: var(--black);
+  color: var(--white);
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.form,
+fieldset {
+  padding-left: 0;
+}

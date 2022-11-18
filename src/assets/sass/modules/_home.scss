@@ -1,0 +1,71 @@
+@use "../utils/customProperties";
+@use "../utils/media";
+
+.home {
+  position: relative;
+  min-height: 90vh;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: var(--background-gradient);
+  }
+
+  &__content {
+    margin: 2rem auto;
+  }
+
+  &__heading {
+    width: 480px;
+    max-width: 90vw;
+    margin-bottom: 3rem;
+  }
+
+  &__notesList {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__availableSubjects {
+    position: relative;
+    width: 95vw;
+    height: 30rem;
+    overflow-y: auto;
+    margin: auto;
+    flex-direction: column;
+    padding: var(--space-500-rem);
+    align-items: center;
+    border-radius: 0.5em;
+    background: var(--white);
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
+
+    @include media.widerThan1200 {
+      width: 40%;
+      margin: unset;
+    }
+
+    h6 {
+      background: var(--background-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      z-index: 2;
+      justify-self: flex-start;
+      align-self: flex-start;
+    }
+  }
+
+  &__subject {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: var(--space-500-rem);
+    padding: var(--space-500-em);
+  }
+}

@@ -1,0 +1,21 @@
+@use "./customProperties";
+
+.textWithIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+
+  svg {
+    margin-right: var(--space-400-em);
+  }
+
+  &--iconRight {
+    flex-direction: row-reverse;
+
+    svg {
+      margin-right: 0;
+      margin-left: var(--space-400-em);
+    }
+  }
+}

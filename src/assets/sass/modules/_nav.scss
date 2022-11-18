@@ -1,0 +1,140 @@
+@use "../utils/media";
+@use "../utils/customProperties";
+
+.nav {
+  background: var(--background-gradient);
+  color: var(--white);
+  box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.4);
+  height: 10vh;
+  min-height: 4.2rem;
+  max-width: 100vw;
+  padding: 0;
+
+  &__home {
+    font-size: 1.5rem;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  &__logo {
+    margin-left: var(--space-300-rem);
+    width: 2rem;
+    fill: var(--white);
+  }
+
+  &__profile {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 2px solid var(--white);
+
+    &::after {
+      display: none;
+    }
+
+    img {
+      border-radius: inherit;
+    }
+  }
+
+  &__wrap {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-400-rem);
+
+    @include media.widerThan1200 {
+      padding: 2rem;
+    }
+
+    @include media.widerThan1600 {
+      padding: unset;
+    }
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: flex-end;
+    width: 20vw;
+    min-width: 150px;
+
+    @include media.widerThan1200 {
+      width: 40vw;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__userActions {
+    display: flex;
+    gap: 1rem;
+
+    @include media.widerThan1200 {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__links {
+    background-color: var(--black);
+
+    @include media.widerThan1200 {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &__link {
+    a {
+      text-decoration: none;
+      color: #f4f4f4;
+    }
+
+    &:nth-child(odd) {
+      background-color: var(--black--dark);
+
+      @include media.widerThan1200 {
+        background-color: transparent;
+      }
+    }
+    &:nth-child(even) {
+      background-color: var(--black);
+
+      @include media.widerThan1200 {
+        background-color: transparent;
+      }
+    }
+
+    @include media.widerThan768 {
+      &:last-child {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__hamBurger {
+    background: var(--white);
+    margin-left: 1rem;
+
+    @include media.widerThan1200 {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      visibility: visible;
+      background-color: var(--white);
+    }
+    &::after {
+      width: 1.5rem;
+    }
+  }
+}
