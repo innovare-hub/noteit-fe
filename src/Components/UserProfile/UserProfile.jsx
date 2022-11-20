@@ -1,10 +1,10 @@
 import LogoutButton from "@components/Buttons/LogoutButton";
 import { useAuth } from "@contexts/AuthProvider";
 import React from "react";
-import Clock from "@svgs/clock.svg";
-import Choice from "@svgs/choice.svg";
-import GraduationCap from "@svgs/graduationCap.svg";
-import Devices from "@svgs/devices.svg";
+import { ReactComponent as Clock } from "@svgs/clock.svg";
+import { ReactComponent as Choice } from "@svgs/choice.svg";
+import { ReactComponent as GraduationCap } from "@svgs/graduationCap.svg";
+import { ReactComponent as Devices } from "@svgs/devices.svg";
 import TextWithIcon from "@components/TextWithIcon";
 import getIconPaths from "@utils/iconDetails";
 import Button from "@components/Buttons/Button";

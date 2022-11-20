@@ -1,5 +1,5 @@
 import React from "react";
-import ExamTimeIllustration from "@svgs/ExamTime.svg";
+import { ReactComponent as ExamTimeIllustration } from "@svgs/examTime.svg";
 import LoginButton from "@components/Buttons/LoginButton";
 
 export default function Hero({ setShowLoginOptions }) {

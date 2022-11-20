@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import SaveIcon from "@svgs/bookmark.svg";
+import { ReactComponent as SaveIcon } from "@svgs/bookmark.svg";
 import TextWithIcon from "@components/TextWithIcon";
 import getIconPaths from "@utils/iconDetails";
 import { useAuth } from "@contexts/AuthProvider";

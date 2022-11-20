@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FAB from "@components/FAB/FAB";
-import Logo from "@svgs/logoAlt.svg";
+import { ReactComponent as Logo } from "@svgs/logoAlt.svg";
 import LoginButton from "@components/Buttons/LoginButton";
 import { useAuth } from "@contexts/AuthProvider";
 import Links from "./Links";

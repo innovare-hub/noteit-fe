@@ -1,5 +1,5 @@
 import React from "react";
-import Wave from "@svgs/wave.svg";
+import { ReactComponent as Wave } from "@svgs/wave.svg";
 
 export default function Info() {
   return (

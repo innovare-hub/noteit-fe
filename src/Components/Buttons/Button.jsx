@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import Loader from "@svgs/buttonLoader.svg";
+import { ReactComponent as Loader } from "@svgs/buttonLoader.svg";
 
 export default function Button({
   children,

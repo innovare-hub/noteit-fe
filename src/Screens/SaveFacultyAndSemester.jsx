@@ -1,5 +1,5 @@
 import React from "react";
-import GuyWelcomingVisitors from "@svgs/guyWelcomingVisitors.svg";
+import { ReactComponent as GuyWelcomingVisitors } from "@svgs/guyWelcomingVisitors.svg";
 import Container from "@components/Container";
 import Header from "@components/SaveFacultyAndSemester/Header";
 
