@@ -96,9 +96,19 @@
 
 body {
   background: var(--white);
-  --bodyFont: "roboto";
   --headingFont: "Noto Sans JP";
   --primaryTextColor: var(--black);
+  font-family: Roboto, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+h6 {
+  font-family: Raleway, sans-serif;
 }
 
 p,
