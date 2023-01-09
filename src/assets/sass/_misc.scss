@@ -1,5 +1,5 @@
-@use "utils/media";
-@use "utils/customProperties";
+@use 'utils/media';
+@use 'utils/customProperties';
 
 :root {
   font-size: 0.9375rem;
@@ -21,7 +21,7 @@
   top: 0;
   z-index: 5;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   min-height: 100vh;
   pointer-events: none;
 
@@ -96,7 +96,7 @@
 
 body {
   background: var(--white);
-  --headingFont: "Noto Sans JP";
+  --headingFont: 'Noto Sans JP';
   --primaryTextColor: var(--black);
   font-family: Roboto, sans-serif;
 }
