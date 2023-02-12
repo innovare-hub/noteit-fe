@@ -159,3 +159,10 @@ select {
 fieldset {
   padding-left: 0;
 }
+
+// li text indent
+ul > li,
+ol > li {
+  text-indent: -1.5rem;
+  padding-left: 1.5rem;
+}
