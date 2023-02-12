@@ -1,5 +1,5 @@
-@use "../../utils/media";
-@use "../../utils/customProperties";
+@use '../../utils/media';
+@use '../../utils/customProperties';
 
 .testimonials {
   overflow-x: auto;
@@ -15,7 +15,7 @@
 .testimonial {
   position: relative;
   background: var(--white);
-  box-shadow: 10px 10px 17px #bfbfbf, -10px -10px 17px #ffffff;
+  box-shadow: 10px 10px 17px #bfbfbf;
   border-right: 2px solid var(--brand-400);
   border-radius: var(--space-400-rem);
   padding: var(--space-400-rem);
@@ -28,7 +28,7 @@
   }
 
   &::before {
-    content: url("/static/svgs/quote.svg");
+    content: url('/static/svgs/quote.svg');
     position: absolute;
     top: -3rem;
     left: 1rem;
