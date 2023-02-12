@@ -1,5 +1,5 @@
-@use "../../utils/media";
-@use "../../utils/customProperties";
+@use '../../utils/media';
+@use '../../utils/customProperties';
 
 .info {
   position: relative;
@@ -34,9 +34,5 @@
 
   &__details {
     max-width: 600px;
-  }
-
-  &__list {
-    font-style: italic;
   }
 }

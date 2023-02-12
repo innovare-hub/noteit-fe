@@ -1,5 +1,5 @@
-import React from "react";
-import { ReactComponent as Wave } from "@svgs/wave.svg";
+import React from 'react';
+import { ReactComponent as Wave } from '@svgs/wave.svg';
 
 export default function Info() {
   return (
@@ -7,34 +7,34 @@ export default function Info() {
       <Wave className="info__wave" />
       <div className="info__detailsWrap content">
         <h4 className="info__heading heading heading--white">
-          What exactly does NoteIT offer ?
+          What exactly does NoteIT offer?
         </h4>
         <div className="info__details">
           <p>
-            Our mission is to provide a platform for students that once we, the
-            creators dreamed about back when we were students.
+            Our mission is to provide a platform for students that we, the
+            creators, envisioned as students.
           </p>
           <h5>We wanted</h5>
           <ul className="info__list">
-            <li>the teachers to understand our level and teach accordingly.</li>
             <li>
-              the institution to listen to our problems, from our perspectives.
+              Teachers to understand our intelligence level and guide us
+              accordingly.
             </li>
+            <li>A collaboration platform to learn, share and grow together.</li>
             <li>
-              to step out of the box and understand the real-world applications
+              To step out of the box and understand the real-world applications
               of the topics we read.
             </li>
           </ul>
           <p>
-            Overall, we wanted a flexible and inspirational teaching-learning
+            Overall, we desired a versatile and inspiring teaching-learning
             experience.
           </p>
 
           <h5>The sad part ?</h5>
           <p>
-            There were no institutions or platforms back then that focused(or,
-            at least tried to focus) more on students, rather than the
-            &ldquo;business&rdquo; aspect.
+            There were no institutions or platforms that focused on students
+            rather than the &ldquo;business&rdquo; aspect at the time.
           </p>
         </div>
       </div>
