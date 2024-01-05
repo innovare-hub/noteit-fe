@@ -1,8 +1,13 @@
-import TextWithIcon from "@components/TextWithIcon";
-import React from "react";
-import getIconPaths from "@utils/iconDetails";
+import React from 'react';
+import { API_ENDPOINT } from '@utils/config';
+import getIconPaths from '@utils/iconDetails';
+import TextWithIcon from '@components/TextWithIcon';
 
 export default function LoginOptions({ setShowLoginOptions }) {
+  function handleLogin(OAuthProvider) {
+    window.location.href = `${API_ENDPOINT}/auth/${OAuthProvider}`;
+  }
+
   return (
     <div className="loginOptions" aria-hidden="true">
       <div className="loginOptions__header">
@@ -12,21 +17,22 @@ export default function LoginOptions({ setShowLoginOptions }) {
           <em>Don&apos;t worry. Your data will never be shared.</em>
         </small>
       </div>
+
       <div className="flex loginOptions__buttons">
-        <a href="/auth/facebook" className="btn link">
+        <button onClick={() => handleLogin('facebook')} className="btn link">
           <TextWithIcon
             textContent="Continue with Facebook"
-            pathData={getIconPaths("facebook")}
+            pathData={getIconPaths('facebook')}
             viewBox="0 0 167.7 167.7"
           />
-        </a>
-        <a href="/auth/google" className="btn link">
+        </button>
+        <button onClick={() => handleLogin('google')} className="btn link">
           <TextWithIcon
             textContent="Continue with Google"
-            pathData={getIconPaths("googlePlus")}
+            pathData={getIconPaths('googlePlus')}
             viewBox="0 0 97.75 97.75"
           />
-        </a>
+        </button>
       </div>
 
       <button
@@ -34,7 +40,7 @@ export default function LoginOptions({ setShowLoginOptions }) {
         className="close"
         onClick={() => setShowLoginOptions(false)}
       >
-        <TextWithIcon textContent="Close" pathData={getIconPaths("cross")} />
+        <TextWithIcon textContent="Close" pathData={getIconPaths('cross')} />
       </button>
     </div>
   );

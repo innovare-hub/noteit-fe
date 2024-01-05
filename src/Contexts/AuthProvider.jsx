@@ -1,12 +1,16 @@
-import React, { createContext, useEffect, useState } from "react";
-import parseJwt from "@utils/parseJWT";
-import Loader from "@components/Loader";
+import parseJwt from '@utils/parseJWT';
+import Loader from '@components/Loader';
+import { API_ENDPOINT } from '@utils/config';
+import React, { createContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext(null);
 
 async function fetchAuthStatus() {
   try {
-    const res = await fetch("/auth");
+    const res = await fetch(`${API_ENDPOINT}/auth`, {
+      method: 'GET',
+      credentials: 'include',
+    });
     const responseFromServer = await res.json();
     const { isAuthenticated, accessToken } = responseFromServer;
     if (isAuthenticated) {
@@ -30,7 +34,7 @@ function AuthProvider({ children }) {
         .then((response) => setAuthState(response))
         .catch((error) => setAuthState(error));
     }
-  }, []);
+  }, [authState]);
 
   return (
     <AuthContext.Provider value={authState}>
@@ -42,7 +46,7 @@ function AuthProvider({ children }) {
 function useAuth() {
   const context = React.useContext(AuthContext);
   if (context === undefined) {
-    throw new Error("useAuth must be used within a AuthProvider");
+    throw new Error('useAuth must be used within a AuthProvider');
   }
 
   return context;

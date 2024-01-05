@@ -1,35 +1,33 @@
-import PWA from "@screens/PWA";
-import ReactGA from "react-ga";
-import ReactDOM from "react-dom";
-import Home from "@screens/Home";
-import Team from "@screens/Team";
-import Root from "@screens/Root";
-import About from "@screens/About";
-import Admin from "@screens/Admin";
-import Page404 from "@screens/404";
-import Nav from "@components/Nav/Nav";
-import React, { useEffect } from "react";
-import { createBrowserHistory } from "history";
-import Footer from "@components/Footer/Footer";
-import PrivateRoute from "@components/PrivateRoute";
-import { AuthProvider } from "@contexts/AuthProvider";
-import { NoteProvider } from "@contexts/NoteProvider";
-import SaveFacultyAndSemester from "@screens/SaveFacultyAndSemester";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PWA from '@screens/PWA';
+import ReactGA from 'react-ga';
+import Home from '@screens/Home';
+import Team from '@screens/Team';
+import Root from '@screens/Root';
+import About from '@screens/About';
+import Admin from '@screens/Admin';
+import Page404 from '@screens/404';
+import Nav from '@components/Nav/Nav';
+import React, { useEffect } from 'react';
+import { createBrowserHistory } from 'history';
+import Footer from '@components/Footer/Footer';
+import PrivateRoute from '@components/PrivateRoute';
+import { NoteProvider } from '@contexts/NoteProvider';
+import SaveFacultyAndSemester from '@screens/SaveFacultyAndSemester';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import "extended-normalize.css";
-import "./assets/sass/style.scss";
-import Note from "@screens/Note";
+import 'extended-normalize.css';
+import './assets/sass/style.scss';
+import Note from '@screens/Note';
 
 const history = createBrowserHistory();
 
 export default function App() {
   useEffect(() => {
-    if (window.location.hostname !== "localhost") {
-      ReactGA.initialize("UA-195205173-1");
+    if (window.location.hostname !== 'localhost') {
+      ReactGA.initialize('UA-195205173-1');
       ReactGA.pageview(window.location.pathname + window.location.search);
     } else {
-      console.log("not registering analytics on development mode");
+      console.log('not registering analytics on development mode');
     }
   }, []);
 
