@@ -41,7 +41,6 @@ export default function App() {
           <Root history={history} />
         </Route>
         <PrivateRoute
-          exact
           component={SaveFacultyAndSemester}
           path="/save-faculty-and-semester"
           condition="newUser"
@@ -50,7 +49,6 @@ export default function App() {
         <Route exact path="/home">
           <NoteProvider>
             <PrivateRoute
-              exact
               component={Home}
               path="/home"
               condition="existingUser"
@@ -61,7 +59,6 @@ export default function App() {
         <Route exact path="/notes/:faculty/:semester/:subject/:unit">
           <NoteProvider>
             <PrivateRoute
-              exact
               component={Note}
               path="/notes/:faculty/:semester/:subject/:unit"
               condition="correctSubscription"
@@ -79,7 +76,6 @@ export default function App() {
           <PWA />
         </Route>
         <PrivateRoute
-          exact
           component={Admin}
           path="/only-admin"
           condition="isAdmin"

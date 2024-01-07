@@ -1,8 +1,9 @@
-import React, { createContext, useEffect, useState } from "react";
-import useFetch from "@hooks/useFetch";
-import { useAuth } from "./AuthProvider";
+import React, { createContext, useEffect, useState } from 'react';
+import useFetch from '@hooks/useFetch';
+import { useAuth } from './AuthProvider';
+import { API_ENDPOINT } from '@utils/config';
 
-const NoteContext = createContext(null);
+const NoteContext = createContext({});
 
 function NoteProvider({ children }) {
   const { user } = useAuth();
@@ -12,7 +13,7 @@ function NoteProvider({ children }) {
   useEffect(() => {
     if (user) {
       startFetching({
-        url: "/users/availableNotes",
+        url: `${API_ENDPOINT}/users/availableNotes`,
       });
     }
   }, [user]);
@@ -22,7 +23,7 @@ function NoteProvider({ children }) {
     if (data !== null) {
       setNote(data);
     }
-  }, [status, data, note]);
+  }, [status, data]);
 
   return <NoteContext.Provider value={note}>{children}</NoteContext.Provider>;
 }
@@ -30,7 +31,7 @@ function NoteProvider({ children }) {
 function useNote() {
   const context = React.useContext(NoteContext);
   if (context === undefined) {
-    throw new Error("useNote must be used within a NoteProvider");
+    throw new Error('useNote must be used within a NoteProvider');
   }
 
   return context;

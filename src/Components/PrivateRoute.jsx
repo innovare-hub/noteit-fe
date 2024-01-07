@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useAuth } from "@contexts/AuthProvider";
-import { Route, withRouter } from "react-router";
-import Loader from "./Loader";
+import Loader from './Loader';
+import { useAuth } from '@contexts/AuthProvider';
+import { Route, withRouter } from 'react-router';
+import React, { useEffect, useState } from 'react';
 
 export default withRouter(
   ({ history, condition, match, component: Component, ...rest }) => {
@@ -12,33 +12,27 @@ export default withRouter(
     const [routeProps, setRouteProps] = useState(null);
 
     function shouldRender() {
-      const { isAuthenticated, isNewUser, isAdmin } = authContext;
+      const { isAuthenticated, isNewUser } = authContext;
       if (!isAuthenticated) {
         setIsConditionValid(false);
         return setIsLoading(false);
       }
       console.log(condition);
       switch (condition) {
-        case "newUser":
+        case 'newUser':
           if (isNewUser) {
             setIsConditionValid(true);
             setIsLoading(false);
           }
           break;
-        case "existingUser":
+        case 'existingUser':
           if (!isNewUser) {
             setIsConditionValid(true);
             setIsLoading(false);
           }
           break;
-        case "correctSubscription":
+        case 'correctSubscription':
           getRouteProps();
-          break;
-        case "isAdmin":
-          if (isAdmin) {
-            setIsConditionValid(true);
-            setIsLoading(false);
-          }
           break;
       }
     }
@@ -71,27 +65,20 @@ export default withRouter(
 
     useEffect(() => console.log({ isLoading }), [isLoading]);
 
-    useEffect(() => shouldRender(), []);
+    useEffect(() => shouldRender(), [authContext]);
 
     useEffect(() => {
       if (routeProps === null && isConditionValid === false) {
-        console.log("runs");
-        history.push("/");
-        setIsConditionValid(true);
+        console.log('runs');
+        history.push('/');
         setIsLoading(false);
       }
     }, [routeProps, isConditionValid]);
 
-    function RenderRouteOrRedirect() {
-      if (!isConditionValid) {
-        console.log("invalid condition");
-        setRouteProps(null);
-        return null;
-      }
-
-      return <Route {...rest} render={(props) => <Component {...props} />} />;
-    }
-
-    return isLoading ? <Loader /> : <RenderRouteOrRedirect />;
+    return isLoading ? (
+      <Loader />
+    ) : isConditionValid !== false ? (
+      <Route {...rest} render={(props) => <Component {...props} />} />
+    ) : null;
   }
 );

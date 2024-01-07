@@ -1,15 +1,14 @@
-import { AuthProvider } from '@contexts/AuthProvider';
-import Root from '@screens/Root';
+import App from './App';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-// import App from "./App";
 import 'extended-normalize.css';
 import './assets/sass/style.scss';
+import ReactDOM from 'react-dom/client';
+import { AuthProvider } from '@contexts/AuthProvider';
 
 ReactDOM.createRoot(document.getElementById('app')).render(
   <React.StrictMode>
     <AuthProvider>
-      <Root />
+      <App />
     </AuthProvider>
   </React.StrictMode>
 );
